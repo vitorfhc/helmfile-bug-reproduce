@@ -1,0 +1,16 @@
+repositories:
+- name: jetstack
+  url: https://charts.jetstack.io
+
+releases:
+- name: dep-01
+  namespace: dep
+  createNamespace: true
+  version: 0.1.0
+  chart: ./dep-01
+  values:
+  - ./values.yaml
+  dependencies:
+  - alias: certManager
+    version: ~v1.7.0
+    chart: jetstack/cert-manager
